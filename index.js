@@ -22,10 +22,7 @@
 
 const nextISSTimesForMyLocation = require("./iss").nextISSTimesForMyLocation;
 nextISSTimesForMyLocation((error, data) => {
-  if (error) {
-    return console.log("It didn't work!", error);
-  }
-
+  if (error) return console.log("It didn't work!", error);
   for (const eachPass of data) {
     const datetime = new Date(0);
     datetime.setUTCSeconds(eachPass.risetime)
